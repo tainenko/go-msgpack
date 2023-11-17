@@ -76,7 +76,7 @@ func TestEncoder_EncodeStr(t *testing.T) {
 		args    args
 		wantBuf []byte
 	}{
-		// TODO: Add test cases.
+		{"Encode fixed string, 'abcde'", args{"abcde"}, []byte{0xA5, 0x61, 0x62, 0x63, 0x64, 0x65}},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -97,7 +97,8 @@ func TestEncoder_isFloat(t *testing.T) {
 		args args
 		want bool
 	}{
-		// TODO: Add test cases.
+		{"1.1 is float", args{1.1}, true},
+		{"1.0 is not float", args{1.0}, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
